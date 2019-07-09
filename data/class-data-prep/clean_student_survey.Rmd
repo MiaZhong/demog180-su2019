@@ -1,0 +1,24 @@
+---
+title: "Clean student survey results"
+output: html_notebook
+---
+
+Clean up the raw student survey results by
+
+* removing emails, student ids, etc
+* giving the variables somewhat nicer names
+
+```{r}
+library(tidyverse)
+library(stringr)
+
+raw.dat <- read_csv("../survey/2019 social networks - hwk01 - data entry (Responses) - Form Responses 1.csv")
+varmap <- read_csv("../survey/varmap.csv")
+
+colnames(raw.dat) <- varmap$new
+
+clean.dat <- raw.dat %>% select(-scratch1, -scratch2)
+
+write_csv(clean.dat, "../survey/ucb_personal_networks_clean.csv")
+```
+
