@@ -1,1 +1,0 @@
-{"name": "hw06_solution", "endpoint": "cal/demog180/sp19/jassigntest1", "src": ["hw06_solution.ipynb"], "tests": {"tests/q*.py": "ok_test"}, "protocols": ["file_contents", "grading", "backup"]}
